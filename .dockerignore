@@ -1,0 +1,16 @@
+.venv
+.git
+.env
+__pycache__
+.pytest_cache
+.ruff_cache
+outputs
+frontend/node_modules
+frontend/dist
+frontend/test-results
+frontend/playwright-report
+frontend/tests
+frontend/*.tsbuildinfo
+tests
+examples
+scripts

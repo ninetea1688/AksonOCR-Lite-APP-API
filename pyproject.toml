@@ -1,0 +1,26 @@
+[project]
+name = "aksonocr-lite-api"
+version = "0.2.0"
+description = "Local API for evaluating AksonOCR-Lite on Thai documents"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "aksonocr-lite==1.0.0",
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "python-multipart>=0.0.20,<1",
+  "pydantic-settings>=2.7,<3",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[tool.uv.sources]
+aksonocr-lite = { url = "https://github.com/Remtir/AksonOCR-Lite/archive/18da1dfeb9d4fc71d781ec0bfd5c80014e29a225.tar.gz" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
